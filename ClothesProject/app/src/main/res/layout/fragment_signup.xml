@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.SignupFragment">
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_firstVLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_secondVLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_firstHline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/hello"
+        android:textSize="36sp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        android:paddingTop="56dp"
+
+        />
+
+    <TextView
+        android:id="@+id/fill"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/fill_signUp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_firstHline"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintTop_toBottomOf="@id/tv_hello" />
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:inputType="textPersonName"
+        android:hint="@string/user_name"
+        android:gravity="start"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/light_gray"
+        app:backgroundTint="@color/light_gray"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintEnd_toStartOf="@id/gl_secondVLine"
+        app:layout_constraintTop_toTopOf="@id/gl_firstHline"
+        app:layout_constraintBottom_toTopOf="@id/email"
+        />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_address"
+        android:gravity="start"
+        android:layout_marginEnd="2dp"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/light_gray"
+        app:backgroundTint="@color/light_gray"
+        app:layout_constraintStart_toEndOf="@id/gl_firstVLine"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintTop_toBottomOf="@id/firstName"
+        android:autofillHints="name" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:inputType="textVisiblePassword"
+        android:hint="@string/password"
+        android:gravity="start"
+        android:layout_marginEnd="2dp"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/light_gray"
+        app:backgroundTint="@color/light_gray"
+        android:drawableEnd="@drawable/ic_eye"
+        app:layout_constraintStart_toEndOf="@id/gl_firstVLine"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        />
+
+    <EditText
+        android:id="@+id/retype_password"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:inputType="textVisiblePassword"
+        android:hint="@string/retype_password"
+        android:gravity="start"
+        android:layout_marginEnd="2dp"
+        android:layout_marginVertical="20dp"
+        android:textColor="@color/dark_gray"
+        android:textColorHint="@color/light_gray"
+        app:backgroundTint="@color/light_gray"
+        android:drawableEnd="@drawable/ic_eye"
+        app:layout_constraintStart_toEndOf="@id/gl_firstVLine"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/entry_button"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintTop_toBottomOf="@id/retype_password"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

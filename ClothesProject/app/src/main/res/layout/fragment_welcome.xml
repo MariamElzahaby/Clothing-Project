@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.WelcomeFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_firstVLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_secondVLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_signUpLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <ImageView
+        android:id="@+id/iv_welcome"
+        android:layout_width="0dp"
+        android:layout_height="320dp"
+        android:layout_marginVertical="52dp"
+        android:src="@drawable/ic_welcome"
+        app:layout_constraintBottom_toTopOf="@id/tv_welcome"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textColor="@color/dark_gray"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        app:layout_constraintBottom_toTopOf="@id/tv_description"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_welcomeLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/entry_button"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        />
+
+    <TextView
+        android:id="@+id/tv_dontHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/dont_have_account"
+        android:textSize="14sp"
+        android:paddingStart="40dp"
+        app:layout_constraintBottom_toTopOf="@id/gl_signUpLine"
+        app:layout_constraintEnd_toStartOf="@id/tv_signUpHere"
+        app:layout_constraintStart_toStartOf="@id/gl_firstVLine" />
+
+    <TextView
+        android:id="@+id/tv_signUpHere"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:text="@string/sign_up_here"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingEnd="40dp"
+        app:layout_constraintBottom_toTopOf="@id/gl_signUpLine"
+        app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
+        app:layout_constraintStart_toEndOf="@id/tv_dontHaveAccount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

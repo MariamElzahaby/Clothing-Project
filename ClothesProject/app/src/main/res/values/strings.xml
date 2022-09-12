@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ClothesProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello">Hello!</string>
+    <string name="welcome">Welcome</string>
+    <string name="log_in">Log In</string>
+    <string name="description">Life isn\'t perfect but you outfit can be, here you can find the ULTIMATE clothing to see the world in</string>
+    <string name="sign_up_here">Sign Up here</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="fill_signUp">Please fill in to sign up new account</string>
+    <string name="user_name">User Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="retype_password">Retype Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="product_color">Color</string>
+    <string name="size">Size</string>
+    <string name="Xsmall">XS</string>
+    <string name="small">S</string>
+    <string name="medium">M</string>
+    <string name="large">L</string>
+    <string name="Xlarge">XL</string>
+    <string name="cart">Cart</string>
+</resources>
