@@ -29,13 +29,14 @@
     <ImageView
         android:id="@+id/iv_welcome"
         android:layout_width="0dp"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="52dp"
         android:src="@drawable/ic_welcome"
         app:layout_constraintBottom_toTopOf="@id/tv_welcome"
         app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
         app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/tv_welcome"
@@ -48,8 +49,8 @@
         android:fontFamily="sans-serif-condensed"
         app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
         app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
-        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
-        app:layout_constraintBottom_toTopOf="@id/tv_description"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/tv_description"

@@ -45,6 +45,8 @@
         <action
             android:id="@+id/action_collectionFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+
+
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
@@ -54,5 +56,9 @@
         <action
             android:id="@+id/action_detailsFragment_to_collectionFragment"
             app:destination="@id/collectionFragment" />
+        <argument android:name="data"
+            app:argType="com.example.clothesproject.DummyData.Data"
+
+            />
     </fragment>
 </navigation>

@@ -1,3 +1,5 @@
 package com.example.clothesproject.DummyData
 
-data class Data(var name:String, var price:String)
+import java.io.Serializable
+
+data class Data(var name:String, var price:String): Serializable
