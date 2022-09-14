@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.LoginFragment">
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vguideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hguideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <EditText
+        android:id="@+id/et_loginEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:hint="@string/email_address"
+        android:textColor="@color/light_gray"
+        android:drawableEnd="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="@id/Vguideline2"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintTop_toTopOf="@id/Hguideline1"
+        app:layout_constraintBottom_toTopOf="@id/loginPassword"/>
+
+    <EditText
+        android:id="@+id/loginPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:hint="@string/password"
+        android:textColor="@color/light_gray"
+        android:drawableEnd="@drawable/ic_eye"
+        app:layout_constraintEnd_toEndOf="@id/Vguideline2"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintTop_toBottomOf="@id/et_loginEmail"
+        />
+
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Login"
-        android:textSize="40dp"/>
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="76dp"
+        android:text="@string/welcome_back"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_logintoacc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/login_to_your_account"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="@drawable/entry_button"
+        app:layout_constraintEnd_toEndOf="@id/Vguideline2"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintTop_toTopOf="@id/loginPassword"
+        app:layout_constraintBottom_toBottomOf="@id/Hguideline2"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

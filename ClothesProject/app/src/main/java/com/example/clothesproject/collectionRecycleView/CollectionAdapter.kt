@@ -1,38 +1,37 @@
-package com.example.clothesproject.CollectionRecycleView
+package com.example.clothesproject.collectionRecycleView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clothesproject.DummyData.Data
+import com.example.clothesproject.productApis.AllProductResponse
 import com.example.clothesproject.R
 
 
 class CollectionAdapter (
-    private val dataList: List<Data>,
+    private val dataList: List<AllProductResponse>
 ): RecyclerView.Adapter<CollectionAdapter.Holder>() {
 
 
     inner class Holder(view: View): RecyclerView.ViewHolder(view){
         var tv_pName: TextView
         var tv_price: TextView
-        lateinit var data: Data
+        lateinit var allProductResponse: AllProductResponse
 
         init {
             tv_pName = view.findViewById(R.id.tv_productName)
             tv_price = view.findViewById(R.id.tv_productPrice)
         }
 
-        fun bind(data: Data) {
-            this.data = data
-            tv_pName.text = data.name
-            tv_price.text = data.price
+        fun bind(allProductResponse: AllProductResponse) {
+            this.allProductResponse = allProductResponse
+            tv_pName.text = allProductResponse.name.toString()
+            tv_price.text = allProductResponse.price.toString()
 
             itemView.setOnClickListener {
                 onItemClickListener?.also {
-                    it(data)
+                    it(allProductResponse)
                 }
             }
         }
@@ -52,11 +51,9 @@ class CollectionAdapter (
         return dataList.size
     }
 
+    private var onItemClickListener: ((AllProductResponse) -> Unit)? = null
 
-
-    private var onItemClickListener: ((Data) -> Unit)? = null
-
-    fun setOnItemClickListener(listener: (Data) -> Unit) {
+    fun setOnItemClickListener(listener: (AllProductResponse) -> Unit) {
         onItemClickListener = listener
     }
 
