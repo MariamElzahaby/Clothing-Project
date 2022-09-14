@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.DetailsFragment">
+    tools:context=".fragments.DetailsFragment">
 
 
     <RelativeLayout
         android:id="@+id/upperBackground"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         android:background="@color/white">
 
         <ImageView
             android:id="@+id/iv_image"
-            android:layout_width="342dp"
-            android:layout_height="293dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/test" />
+            tools:src="@drawable/test" />
 
         <ImageView
             android:id="@+id/iv_back"
@@ -32,11 +32,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="433dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/upperBackground"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-23dp"
-        android:layout_marginBottom="0dp"
         android:background="@drawable/bottom_background">
 
         <androidx.constraintlayout.widget.Guideline
@@ -72,13 +71,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
+            android:text="Comsy, nice for you to like going somewhere comsy. Just by new this and you will suprise with your style"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/tv_color"
             app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
             app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
-            app:layout_constraintTop_toBottomOf="@id/tv_titleTxt"
-            tools:text="Comsy, nice for you to like going somewhere comsy. Just by new this and you will suprise with your style" />
+            app:layout_constraintTop_toBottomOf="@id/tv_titleTxt" />
 
 
         <TextView
@@ -102,7 +101,7 @@
             android:backgroundTint="@color/black"
             android:drawableStart="@drawable/ic_shopping_bag"
             android:drawablePadding="8dp"
-            android:paddingHorizontal="15dp"
+            android:paddingHorizontal="10dp"
             android:text="@string/add_to_cart"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -184,7 +183,7 @@
                 android:button="@android:color/transparent"
                 android:text="@string/Xsmall"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
 
                 />
@@ -196,11 +195,9 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/size_radio_buttons"
                 android:button="@android:color/transparent"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
                 android:text="@string/small"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
 
                 />
@@ -212,11 +209,9 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/size_radio_buttons"
                 android:button="@android:color/transparent"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
                 android:text="@string/medium"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -226,11 +221,9 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/size_radio_buttons"
                 android:button="@android:color/transparent"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
                 android:text="@string/large"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -239,11 +232,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/size_radio_buttons"
                 android:button="@android:color/transparent"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
                 android:text="@string/Xlarge"
                 android:textAlignment="center"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </RadioGroup>
@@ -253,9 +244,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="250$"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
             app:layout_constraintTop_toBottomOf="@id/rg_sizes" />

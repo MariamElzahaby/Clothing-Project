@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.SignupFragment">
+    tools:context=".fragments.SignupFragment">
 
 
 
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_hello" />
 
     <EditText
-        android:id="@+id/et_firstName"
+        android:id="@+id/et_userName"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:textSize="16sp"
@@ -69,12 +69,12 @@
         app:layout_constraintStart_toStartOf="@id/gl_firstVLine"
         app:layout_constraintEnd_toStartOf="@id/gl_secondVLine"
         app:layout_constraintTop_toTopOf="@id/gl_firstHline"
-        app:layout_constraintBottom_toTopOf="@id/et_email"
+        app:layout_constraintBottom_toTopOf="@id/et_signupEmail"
         />
 
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/et_signupEmail"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:textSize="16sp"
@@ -88,7 +88,7 @@
         app:backgroundTint="@color/light_gray"
         app:layout_constraintStart_toEndOf="@id/gl_firstVLine"
         app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
-        app:layout_constraintTop_toBottomOf="@id/et_firstName"
+        app:layout_constraintTop_toBottomOf="@id/et_userName"
         android:autofillHints="name" />
 
     <EditText
@@ -107,7 +107,7 @@
         android:drawableEnd="@drawable/ic_eye"
         app:layout_constraintStart_toEndOf="@id/gl_firstVLine"
         app:layout_constraintEnd_toEndOf="@id/gl_secondVLine"
-        app:layout_constraintTop_toBottomOf="@id/et_email"
+        app:layout_constraintTop_toBottomOf="@id/et_signupEmail"
         />
 
     <EditText

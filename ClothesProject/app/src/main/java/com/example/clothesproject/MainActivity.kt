@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToHome(){
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, VareficationActivity ::class.java)
         startActivity(intent)
         finish()
     }

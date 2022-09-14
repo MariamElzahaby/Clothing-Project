@@ -1,4 +1,4 @@
-package com.example.clothesproject.DummyData
+package com.example.clothesproject.dummyData
 
 import java.io.Serializable
 

@@ -4,43 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.CollectionFragment">
+    tools:context=".fragments.CollectionFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_VLine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_collection"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/product"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="14dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cart"
-        android:textAllCaps="false"
-        android:textSize="26sp"
-        android:drawableStart="@drawable/ic_shopping_bag"
-        android:textColor="@color/white"
-        android:background="@drawable/entry_button"
-        android:fontFamily="sans-serif-medium"
-        android:textAlignment="viewStart"
-        android:paddingStart="165dp"
-        android:paddingEnd="165dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/product" />
 
+
+   
 </androidx.constraintlayout.widget.ConstraintLayout>

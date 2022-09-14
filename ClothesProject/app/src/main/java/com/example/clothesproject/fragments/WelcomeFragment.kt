@@ -1,4 +1,4 @@
-package com.example.clothesproject.Fragments
+package com.example.clothesproject.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,12 +22,12 @@ class WelcomeFragment : Fragment() {
 
         val login = view.findViewById<Button>(R.id.btn_welcomeLogin)
         login.setOnClickListener{
-            findNavController().navigate(R.id.action_welcomFragment_to_loginFragment)
+            findNavController().navigate(R.id.action_welcomeFragment2_to_loginFragment2)
         }
 
         val signUpHere = view.findViewById<TextView>(R.id.tv_signUpHere)
         signUpHere.setOnClickListener{
-            findNavController().navigate(R.id.action_welcomFragment_to_signupFragment)
+            findNavController().navigate(R.id.action_welcomeFragment2_to_signupFragment2)
         }
         return view
     }

@@ -1,4 +1,4 @@
-package com.example.clothesproject.Fragments
+package com.example.clothesproject.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.clothesproject.DummyData.Data
-import com.example.clothesproject.DummyData.mock
 import com.example.clothesproject.R
 
 
@@ -19,6 +17,7 @@ class DetailsFragment (): Fragment() {
     val args : DetailsFragmentArgs by navArgs()
     lateinit var tvTitle : TextView
     lateinit var tvPrice : TextView
+    //lateinit var ivImage : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +29,10 @@ class DetailsFragment (): Fragment() {
         val backtoCollection = view.findViewById<ImageView>(R.id.iv_back)
          tvTitle = view.findViewById<TextView>(R.id.tv_titleTxt)
          tvPrice = view.findViewById<TextView>(R.id.tv_price)
+        //ivImage = view.findViewById<ImageView>(R.id.iv_productImage)
 
         backtoCollection.setOnClickListener{
-            findNavController().navigate(R.id.action_detailsFragment_to_collectionFragment)
+            findNavController().navigate(R.id.action_detailsFragment2_to_collectionFragment2)
         }
         return view
     }
@@ -42,7 +42,8 @@ class DetailsFragment (): Fragment() {
 
         val data = args.data
         tvTitle.text = data.name
-        tvPrice.text = data.price
+        tvPrice.text = data.price.toString()
+        //ivImage.
 
     }
 

@@ -3,62 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
-
+    app:startDestination="@id/collectionFragment2">
     <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.example.clothesproject.Fragments.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/action_welcomFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/welcomeFragment" />
-        <action
-            android:id="@+id/action_welcomFragment_to_signupFragment"
-            app:destination="@id/signupFragment"
-            app:popUpTo="@id/welcomeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.clothesproject.Fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_collectionFragment"
-            app:destination="@id/collectionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.clothesproject.Fragments.SignupFragment"
-        android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" >
-        <action
-            android:id="@+id/action_signupFragment_to_collectionFragment"
-            app:destination="@id/collectionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/collectionFragment"
-        android:name="com.example.clothesproject.Fragments.CollectionFragment"
+        android:id="@+id/collectionFragment2"
+        android:name="com.example.clothesproject.fragments.CollectionFragment"
         android:label="fragment_collection"
         tools:layout="@layout/fragment_collection" >
         <action
-            android:id="@+id/action_collectionFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
-
-
+            android:id="@+id/action_collectionFragment2_to_detailsFragment2"
+            app:destination="@id/detailsFragment2"
+            />
     </fragment>
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.example.clothesproject.Fragments.DetailsFragment"
+        android:id="@+id/profileFragment2"
+        android:name="com.example.clothesproject.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment2_to_vareficationActivity"
+            app:destination="@id/vareficationActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment2"
+        android:name="com.example.clothesproject.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/detailsFragment2"
+        android:name="com.example.clothesproject.fragments.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <action
-            android:id="@+id/action_detailsFragment_to_collectionFragment"
-            app:destination="@id/collectionFragment" />
-        <argument android:name="data"
-            app:argType="com.example.clothesproject.DummyData.Data"
-
-            />
+            android:id="@+id/action_detailsFragment2_to_collectionFragment2"
+            app:destination="@id/collectionFragment2" />
+        <argument
+            android:name="data"
+            app:argType="com.example.clothesproject.productApis.AllProductResponse" />
     </fragment>
+    <activity
+        android:id="@+id/vareficationActivity"
+        android:name="com.example.clothesproject.VareficationActivity"
+        android:label="activity_varefication"
+        tools:layout="@layout/activity_varefication" />
 </navigation>
