@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,20 +23,6 @@ class CollectionFragment() : Fragment() {
     private lateinit var adapter: CollectionAdapter
     lateinit var list : List<AllProductResponse>
 
-    /*val list = listOf<Data>
-    (
-        Data("T-shirt1", "251$"),
-        Data("T-shirt2", "252$"),
-        Data("T-shirt3", "253$"),
-        Data("T-shirt4", "254$"),
-        Data("T-shirt5", "255$"),
-        Data("T-shirt6", "256$"),
-        Data("T-shirt7", "257$"),
-        Data("T-shirt8", "258$"),
-        Data("T-shirt9", "259$")
-
-    )
-*/
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,10 +50,8 @@ class CollectionFragment() : Fragment() {
             }
 
             override fun onFailure(call: Call<List<AllProductResponse>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"An Error Happened", Toast.LENGTH_LONG).show()
             }
-
-
         })
 
     }

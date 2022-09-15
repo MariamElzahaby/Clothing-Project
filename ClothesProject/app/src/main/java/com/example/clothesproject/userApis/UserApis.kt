@@ -20,6 +20,7 @@ interface UserApis {
     @DELETE ("user/logout/{userId}")                         // preferred to be post
     fun logout (@Path ("userId") userId: Int) : Call<Unit>
 
+
 }
 
 var retrofit = Retrofit.Builder()

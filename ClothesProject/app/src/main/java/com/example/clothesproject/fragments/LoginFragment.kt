@@ -1,8 +1,8 @@
 package com.example.clothesproject.fragments
 
 import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.clothesproject.R
 import com.example.clothesproject.userApis.UserLoginRequest
@@ -21,7 +22,6 @@ import retrofit2.Response
 
 
 class LoginFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,9 +40,10 @@ class LoginFragment : Fragment() {
         val eMail :String = view?.findViewById<EditText>(R.id.et_signupEmail)?.text.toString()
         val password :String= view?.findViewById<TextView>(R.id.et_password)?.text.toString()
 
+
         if (eMail.isNullOrEmpty() || password.isNullOrEmpty() )
         {
-            error("Please enter mandatory fields")
+            Toast.makeText(context,"Please enter mandatory fields", Toast.LENGTH_LONG).show()
         }
         else{
             val userRequest = UserLoginRequest(eMail,password)
@@ -51,9 +52,14 @@ class LoginFragment : Fragment() {
                     call: Call<UserLoginResponse>,
                     response: Response<UserLoginResponse>
                 ) {
-                    requireActivity().getSharedPreferences("profile",MODE_PRIVATE).edit().putString("name", response.body()?.name).apply()
-                    requireActivity().getSharedPreferences("profile",MODE_PRIVATE).edit().putString("email", response.body()?.eMail).apply()
-                    requireActivity().getSharedPreferences("profile",MODE_PRIVATE).edit().putInt("userId", response.body()?.userId?: 0).apply()
+                    val edit = requireActivity().getSharedPreferences("profile", MODE_PRIVATE).edit()
+                    edit.putString("name", response.body()?.name)
+                    edit.putString("email", response.body()?.eMail)
+                    edit.putInt("userId", response.body()?.userId?: 0)
+
+                    edit.apply()
+                    edit.commit()
+
                     findNavController().navigate(R.id.action_loginFragment2_to_homeActivity)
                     requireActivity().finish()
                 }
