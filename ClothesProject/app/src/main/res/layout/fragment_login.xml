@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hguideline2"
@@ -36,18 +36,30 @@
         app:layout_constraintGuide_percent="0.75" />
 
 
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toBottomOf="@id/tv_logintoacc"
+        app:layout_constraintBottom_toTopOf="@id/Hguideline1"
+        app:layout_constraintStart_toStartOf="@id/Vguideline1"
+        app:layout_constraintEnd_toEndOf="@id/Vguideline2"
+        />
+
     <EditText
         android:id="@+id/et_loginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="18sp"
+        android:layout_marginTop="50dp"
         android:hint="@string/email_address"
         android:textColor="@color/light_gray"
         android:drawableEnd="@drawable/ic_baseline_account_circle_24"
         app:layout_constraintEnd_toEndOf="@id/Vguideline2"
         app:layout_constraintStart_toStartOf="@id/Vguideline1"
-        app:layout_constraintTop_toTopOf="@id/Hguideline1"
+        app:layout_constraintTop_toBottomOf="@id/Hguideline1"
         app:layout_constraintBottom_toTopOf="@id/loginPassword"/>
 
     <EditText
@@ -58,6 +70,7 @@
         android:textStyle="bold"
         android:textSize="18sp"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColor="@color/light_gray"
         android:drawableEnd="@drawable/ic_eye"
         app:layout_constraintEnd_toEndOf="@id/Vguideline2"
@@ -96,6 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/login"
+        android:layout_marginTop="50dp"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="20sp"

@@ -19,7 +19,6 @@ import retrofit2.Response
 
 class ProfileFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,8 +27,8 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         profile()
 
-        val btn_logout = view.findViewById<AppCompatButton>(R.id.acb_logout)
-        btn_logout.setOnClickListener{
+        val btnLogout = view.findViewById<AppCompatButton>(R.id.acb_logout)
+        btnLogout.setOnClickListener{
             findNavController().navigate(R.id.action_profileFragment2_to_vareficationActivity)
             requireActivity().finish()
         }
@@ -41,17 +40,18 @@ class ProfileFragment : Fragment() {
         val profileEmail = view?.findViewById<TextView>(R.id.profileEmail)
 
         val userId = requireActivity().getSharedPreferences("profile", Context.MODE_PRIVATE).getInt("userId", 0 )
+
         service.getProfile(userId).enqueue(object : Callback<UserDataResponse>{
             override fun onResponse(
                 call: Call<UserDataResponse>,
                 response: Response<UserDataResponse>
             ) {
-                profileName?.text = response.body()?.name?: requireActivity().getSharedPreferences("profile", Context.MODE_PRIVATE).getString("name"," ").toString()
-                profileEmail?.text = response.body()?.email?: requireActivity().getSharedPreferences("profile", Context.MODE_PRIVATE).getString("email"," ").toString()
+                profileName?.text = response.body()?.name
+                profileEmail?.text = response.body()?.email
             }
             override fun onFailure(call: Call<UserDataResponse>, t: Throwable) {
-                profileName?.text = requireActivity().getSharedPreferences("profile", Context.MODE_PRIVATE).getString("name"," ").toString()
-                profileEmail?.text = requireActivity().getSharedPreferences("profile", Context.MODE_PRIVATE).getString("email"," ").toString()
+                profileName?.text = " "
+                profileEmail?.text = " "
             }
 
         })

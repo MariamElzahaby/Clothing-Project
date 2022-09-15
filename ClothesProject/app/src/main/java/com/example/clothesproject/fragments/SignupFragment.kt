@@ -59,10 +59,11 @@ class SignupFragment : Fragment() {
 
         if (name.isNullOrEmpty() || e_Mail.isNullOrEmpty() || password.isNullOrEmpty() || retypePassword.isNullOrEmpty() )
         {
-            error("Please enter mandatory fields")
+            Toast.makeText(context,"Please enter mandatory fields",Toast.LENGTH_LONG).show()
         }
         else if (password!=retypePassword){
-            error("Please retype the password correctly ")
+            Toast.makeText(context,"Please retype the password correctly",Toast.LENGTH_LONG).show()
+
         }
         else{
             val user = UserSignUp(

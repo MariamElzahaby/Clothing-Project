@@ -9,41 +9,40 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.clothesproject.R
+import com.example.clothesproject.databinding.FragmentDetailsBinding
 
 
 class DetailsFragment (): Fragment() {
 
     val args : DetailsFragmentArgs by navArgs()
-    lateinit var tvTitle : TextView
-    lateinit var tvPrice : TextView
-    //lateinit var ivImage : ImageView
+    lateinit var binding: FragmentDetailsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_details, container, false)
-
-        val backtoCollection = view.findViewById<ImageView>(R.id.iv_back)
-         tvTitle = view.findViewById<TextView>(R.id.tv_titleTxt)
-         tvPrice = view.findViewById<TextView>(R.id.tv_price)
-        //ivImage = view.findViewById<ImageView>(R.id.iv_productImage)
+        binding = FragmentDetailsBinding.inflate(inflater,container,false)
+        val backtoCollection = binding.ivBack
 
         backtoCollection.setOnClickListener{
             findNavController().navigate(R.id.action_detailsFragment2_to_collectionFragment2)
         }
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val data = args.data
-        tvTitle.text = data.name
-        tvPrice.text = data.price.toString()
-        //ivImage.
+
+        binding.apply {
+            Glide.with(this@DetailsFragment).load(data.image).into(ivImage)
+            tvTitleTxt.text = data.name
+            tvPrice.text = data.price.toString()
+        }
 
     }
 
